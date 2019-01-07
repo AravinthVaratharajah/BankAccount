@@ -11,4 +11,4 @@ I choosed this kata to improve my skills in back and front language, in this cas
 
 ## How to run and running the tests
 
-Coming soon ...sdfsdsq
+Coming soon ...
