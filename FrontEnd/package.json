@@ -7,7 +7,27 @@
     "build": "ng build --prod --base-href /admin/ --deploy-url /admin/ --output-path=../oneprofile-admin/oneprofile-admin/src/main/resources/static ",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test": "ng test"
+    "test": "ng test --browsers ChromeHeadless --watch=false",
+    "test-debug": "ng test --browsers ChromeDebugging"
+  },
+  
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/jest.setup.ts",
+    "transform": {
+      "^.+\\.(ts|html)$": "<rootDir>/node_modules/jest-preset-angular/preprocessor.js",
+      "^.+\\.js$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@ngrx|angularfire2|firebase))"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "src/tsconfig.spec.json",
+        "useBabelrc": true
+      },
+      "__TRANSFORM_HTML__": true
+    }
   },
   "private": true,
   "dependencies": {
