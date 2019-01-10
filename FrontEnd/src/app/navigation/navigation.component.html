@@ -1,5 +1,11 @@
-<p>
-  <a routerLink="statement" >Statement</a> |
-  <a routerLink="transaction">Transaction</a>
-</p>
-<router-outlet></router-outlet>
+<mat-sidenav-container fullscreen>
+  <mat-toolbar id="appToolbar" color="primary">
+      <button mat-button routerLink="/" id="button-statement" mat-button routerLink="/">
+        <a class="homeLogo">Bank Account</a>
+      </button>
+      <span class="toolbar-filler"></span>
+      <button id="button-transaction" mat-button routerLink="transaction">Transaction</button>
+      <button id="button-statement" mat-button routerLink="statement">Statement</button>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

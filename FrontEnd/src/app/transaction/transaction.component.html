@@ -1,3 +1,26 @@
-<p>
-  transaction works!
-</p>
+<mat-card>
+  <form [formGroup]="form">
+    <mat-radio-group class="radio-button-group" formControlName="radioControl">
+      <mat-radio-button value="deposit" class="radio-button">
+        Deposit
+      </mat-radio-button>
+      <mat-radio-button value="withdraw" class="radio-button">
+        Withdraw
+      </mat-radio-button>
+    </mat-radio-group>
+    <mat-error *ngIf="!form.get('radioControl').touched && submitted">Please chose an operation</mat-error>
+    <br />
+    <div class="margin">
+      <h1>Deposit</h1>
+      <mat-form-field class="margin">
+        <input matInput type="number" placeholder="Amount" formControlName="amount" style="text-align: right;" />
+        <span matSuffix>€&nbsp;</span>
+        <mat-error *ngIf="form.get('amount').invalid && (submitted || form.get('amount').dirty)">Amount is required</mat-error>
+      </mat-form-field>
+      <br />
+      <button mat-raised-button color="primary" (click)="onSubmit()">
+        Submit
+      </button>
+    </div>
+  </form>
+</mat-card>

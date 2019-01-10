@@ -1,0 +1,33 @@
+.homeLogo {
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:200%;
+    color:#ffffff;
+}
+
+.margin {
+    margin: 20px 0;
+}
+
+.radio-button-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+  
+.radio-button {
+    margin-top: 10px;
+}
+
+.footer {
+    clear: both;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+    margin-top: 2em;
+    border-top: 1px solid rgba(163, 147, 130, .1);
+    border-bottom: 1px solid rgba(163, 147, 130, .1);
+}
