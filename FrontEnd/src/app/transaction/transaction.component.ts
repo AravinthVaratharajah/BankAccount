@@ -10,12 +10,14 @@ export class TransactionComponent implements OnInit {
 
   form;
   submitted = false;
+  radioItems: Array<string>;
+  model = {option: 'Deposit'};
 
-  constructor(private fb: FormBuilder) {
-    this.form = fb.group({
-      amount: ['', [Validators.required], [Validators.min(0)]],
-      radioControl: ['', [Validators.required]],
+  constructor(private formBuilder: FormBuilder) {
+    this.form = formBuilder.group({
+      amount: ['', Validators.compose([Validators.required, Validators.min(0)])]
     });
+    this.radioItems = ['Deposit', 'Withdraw'];
   }
 
   ngOnInit() {
@@ -24,10 +26,8 @@ export class TransactionComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    console.log(this.form);
-    console.log(this.form.invalid);
-
     if (this.form.invalid) {
+      // TODO : call back end
       return;
     }
 

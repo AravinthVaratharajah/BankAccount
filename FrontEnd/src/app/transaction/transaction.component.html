@@ -1,17 +1,12 @@
 <mat-card>
   <form [formGroup]="form">
-    <mat-radio-group class="radio-button-group" formControlName="radioControl">
-      <mat-radio-button value="deposit" class="radio-button">
-        Deposit
-      </mat-radio-button>
-      <mat-radio-button value="withdraw" class="radio-button">
-        Withdraw
+    <mat-radio-group class="radio-button-group">
+      <mat-radio-button class="radio-button" *ngFor="let radioItem of radioItems" [value]="radioItem" [checked]="radioItem === model.option">
+        {{radioItem}}
       </mat-radio-button>
     </mat-radio-group>
-    <mat-error *ngIf="!form.get('radioControl').touched && submitted">Please chose an operation</mat-error>
     <br />
     <div class="margin">
-      <h1>Deposit</h1>
       <mat-form-field class="margin">
         <input matInput type="number" placeholder="Amount" formControlName="amount" style="text-align: right;" />
         <span matSuffix>€&nbsp;</span>
